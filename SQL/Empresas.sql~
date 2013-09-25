@@ -1,0 +1,15 @@
+INSERT INTO Zonas (Em_Nombre)
+VALUES
+('G MOVIL S.A.S'), 
+('CONSORCIO Express .SA.S'), 
+('SUMA'), 
+('ETIB S.A.S'), 
+('ESTE ES MI BUS'), 
+('MASIVO CAPITAL'), 
+('TRANZIT'), 
+('CONSORCIO Express .SA.S'), 
+('EGOBUS S.A.S'), 
+('EGOBUS S.A.S'), 
+('COOBUS'), 
+('MASIVO CAPITAL'), 
+('ESTE ES MI BUS');

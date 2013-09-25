@@ -1,0 +1,15 @@
+INSERT INTO Zonas (Nombre)
+VALUES
+('ENGATIVA'), 
+('SAN CRISTOBAL'), 
+('CIUDAD BOLIVAR'), 
+('BOSA'), 
+('CALLE 80'), 
+('KENNEDY'), 
+('USME'), 
+('USAQUEN'), 
+('PERDOMO'), 
+('SUBA CENTRO'), 
+('FONTIBON'), 
+('SUBA ORIENTAL'), 
+('TINTAL-ZONA FRANCA');

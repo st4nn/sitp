@@ -1,0 +1,4 @@
+INSERT INTO Bus_Vinculacion (BE_Id, BE_Nombre)
+VALUES
+('1', 'Activo'), 
+('2', 'Inactivo');

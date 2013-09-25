@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Interventoría SITP</title>
+	
+	<script src="Tools/HTML5/HTML5_enabling_script.js"></script>
+	<script src="Tools/HTML5/jquery.js"></script>
+	<script src="Tools/HTML5/jquery-ui.js"></script>
+	<script src="Tools/HTML5/prefixfree.min.js"></script>
+	
+	<link rel="stylesheet" href="css/jquery-ui-1.8.16.custom.css"/>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <link rel="stylesheet" href="css/estilos_home.css" />
+    
+	<script src="Tools/HTML5/daterangepicker.jQuery.js"></script>
+	<script src="Tools/HTML5/date.js"></script>
+
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script src="raphael-min.js"></script>
+	
+	<!--
+	<script src="Tools/datepicker/datepicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="Tools/datepicker/base.css" />
+	<link rel="stylesheet" type="text/css" href="Tools/datepicker/clean.css" />
+-->
+
+	<script src="js/funciones_home.js"></script>
+
+	<!--elFinder-->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui-1.8.16.custom.css">
+	
+	<script src="Tools/jquery.dataTables.js"></script>
+	<script src="Tools/jquery.pstrength-min.1.2.js"></script>
+	
+	<link  rel="shortcut icon" href="css/imagenes/favicon.ico" />
+</head>
+<body>
+<header>
+	<input id='imgHeader' type='image' src='css/imagenes/Header.png'/>
+	<br>
+	<div id='WelcomeMessage'>
+		<h5 id='lblWelcome'>
+			<label id='labelWelcome'>Bienvenido</label>: <span></span>
+		</h5>
+		<h5 id='lblWelcomeRol'>
+			<label id='labelWelcomeRol'>Rol</label>: <span></span>
+		</h5>		
+	</div>
+	<article id='SelectedSection'>
+		<button id="lnkOcultarMenu"></button>
+		<h4>Inicio</h4>
+	</article>
+</header>
+	
+	
+	<ul id='MainMenu'>
+		<!--<li id='lnkHome'><a id='lblHome' href="#DashBoard"></a></li>-->
+			<!--<button id="obj" class="btn">Prueba</button>-->
+		<li id="lnkDashboard" class="MainMenu_Item">
+			<a id='lblDashboard' href='#Dashboard' act="" >
+					<span class="ui-icon ui-icon-home" style="float: left; margin-right: .3em;"></span>
+					<span class="MainMenuItem_Texto">Incio</span>
+			</a>
+		</li>
+		<!--
+		<li id="lnkOperaciones" class="MainMenu_Item">
+			<a id='lblOperaciones' href='#Operaciones' act="" >
+					<span class="ui-icon ui-icon-script" style="float: left; margin-right: .3em;"></span>
+					<span class="MainMenuItem_Texto">Operaciones</span>
+			</a>
+		</li>
+
+		<li id="lnkSeguridad" class="MainMenu_Item">
+			<a id='lblSeguridad' href='#Seguridad' act="" >
+					<span class="ui-icon ui-icon-script" style="float: left; margin-right: .3em;"></span>
+					<span class="MainMenuItem_Texto">Seguridad</span>
+			</a>
+		</li>
+	-->
+		<li id="lnkVehiculos" class="MainMenu_Item">
+			<a id='lblVehiculos' href='#Vehiculos' act="" >
+					<span class="ui-icon ui-icon-script" style="float: left; margin-right: .3em;"></span>
+					<span class="MainMenuItem_Texto">Vehículos</span>
+			</a>
+		</li>
+		<!--
+		<li id="lnkHallazgos" class="MainMenu_Item">
+			<a id='lblHallazgos' href='#Hallazgos' act="" >
+					<span class="ui-icon ui-icon-contact" style="float: left; margin-right: .3em;"></span>
+					<span class="MainMenuItem_Texto">Hallazgos</span>
+			</a>
+		</li>
+	-->
+		<li id="lnkUsers" class="MainMenu_Item">
+			<a id='lblUsers' href='#Users' act="" >
+					<span class="ui-icon ui-icon-person" style="float: left; margin-right: .3em;"></span>
+					<span class="MainMenuItem_Texto">Usuarios</span>
+			</a>
+		</li>
+		<br>
+		<li id="lnkLogout">
+			<a id='lblLogout' href='' act="" >
+					<span class="ui-icon ui-icon-power" style="float: left; margin-right: .3em;"></span>
+					<span class="MainMenuItem_Texto">Cerrar Sesión</span>
+			</a>
+		</li>
+		<footer id="MainMenu_Footer">
+			Powered by <input type='image' src='css/imagenes/LogoGenivar-mini.png' style="height: 1.5em;width:6em";/>
+		</footer>
+	</ul>
+		<section id='Users' class="Seccion" texto="Usuarios">
+			<section id='Users_Message' class="ui-state-highlight ui-corner-all">
+								<p>
+									<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+									<strong>Hey!</strong> 
+									<texto>.</texto>
+								</p>
+							</section>
+			<section id='MyAccount_Options_CreatingUsers'>
+					<form id='CreatingUsersCreate'>
+							<div id='CreatingUsers_Create' class="ui-state-highlight ui-corner-all">
+								<p>
+									<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+									<strong>Hey!</strong> 
+									<texto>La compañía ha sido creada.</texto>
+								</p>
+							</div>
+						<label class='labelForm' for='txtCreatingUsersCreate_User'>Usuario: </label><input class='inputForm' type='text' id='txtCreatingUsersCreate_User' required/>
+						<label class='labelForm' for='txtCreatingUsersCreate_Password'>Clave: </label><input class='password inputForm' type='password' id='txtCreatingUsersCreate_Password' required/>
+						<label class='labelForm' for='txtCreatingUsersCreate_ReTypePassword'>Nuevamente la clave: </label><input class='inputForm' type='password' id='txtCreatingUsersCreate_ReTypePassword'/>
+						
+						<label class='labelForm' for='cboCreatingUsersCreate_Rol'>Rol</label><select class='inputForm' id='cboCreatingUsersCreate_Rol'></select>
+						<label class='labelForm' for='txtCreatingUsersCreate_Name'>Nombre: </label><input class='inputForm' type='text' id='txtCreatingUsersCreate_Name' required/>
+						<label class='labelForm' for='txtCreatingUsersCreate_DisplayName'>NickName: </label><input class='inputForm' type='text' id='txtCreatingUsersCreate_DisplayName' required/>
+						<label class='labelForm' for='txtCreatingUsersCreate_Email'>Correo: </label><input class='inputForm' type='email' id='txtCreatingUsersCreate_Email'/>
+						
+						<label class='labelForm' for='txtCreatingUsersCreate_Company'>Departamento: </label><select class='inputForm' id='txtCreatingUsersCreate_Company'></select>
+						
+						<section id='CompanyData'>
+							<center>
+								<label class='labelForm' id='lblCompanyURL' for='txtCreatingUsersCreate_CompanyOther'>Nombre Nuevo Departamento: </label><input class='inputForm' type='text' id='txtCreatingUsersCreate_CompanyOther'/>
+								</br>
+								<button class='ui-button-primary ui-button ui-widget ui-corner-all' id='btnCompanyDataCreate'>Crear</button>
+								<button class='ui-button-error ui-button ui-widget ui-corner-all' id = 'btnCompanyDataCancel'>Cancelar</button>
+							</center>
+						</section>
+
+						<label class='labelForm' for='txtCreatingUsersCreate_Phone'>Teléfono: </label><input class='inputForm' type='text' id='txtCreatingUsersCreate_Phone'/>
+						</br></br>
+						<center>
+						<input class='ui-button-success ui-button ui-widget ui-corner-all' type='submit' id='btnMyAccount_Save' value='Crear'/>
+						<button class='ui-button-default ui-button ui-widget ui-corner-all' id='btnMyAccount_CreatingUsersCreate_Reset'>Limpiar</button>
+						</center>
+						</br></br>
+					</form>
+				</section>
+				<section id='MyAccount_Options_MyUsers'>
+					<center>
+						<button id='tableMyUsersRefresh' title"Refrescar" class='ui-button-default ui-button ui-widget ui-corner-all'><strong><span class="ui-icon ui-icon-refresh" style="color: green;"></span></strong></button>
+						<button id='lnkCreatingUsers' class='ui-button-default ui-button ui-widget ui-corner-all' title='Crear Usuario'><strong><span class="ui-icon ui-icon-plusthick" style="color: green;"></span></strong></button>
+					</center>
+						<div id='MyUsers_DeleteAlert' class="ui-state-highlight ui-corner-all">
+								<p>
+									<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+									<strong>Hey!</strong> 
+									<texto>La compañía ha sido creada.</texto>
+								</p>
+						</div>
+					<table id='tableMyUsers'>
+					   <thead>
+						<tr>
+							<th>Usuario</th>
+							<th>Nombre</th>
+							<th>Estado</th>
+							<th>Rol</th>
+						</tr>
+					   </thead>
+					   <tbody></tbody>
+					</table>
+						<section id='MyUsers_InfoUser'>
+							<li id='MyUsers_Info_NickName'>NickName: <span></span></li>
+							<li id='MyUsers_Info_Mail'>Correo: <span></span></li>
+							<li id='MyUsers_Info_Phone'>Telefono: <span></span></li>
+							<li id='MyUsers_Info_Owner'>Creado Por: <span></span></li>
+							<li id='MyUsers_Info_Company'>Departamento: <span></span></li>
+							
+							
+							<section id='MyUsers_InfoUser_Botones'>
+								<button title='Iniciar Sesión' id='btnMyUsers_LoginAsAUser' class='ui-button-default ui-button ui-widget ui-corner-all'  idUser = '' State='' IdCompany='' UserName='' DisplayName='' Mail='' Owner='' IdInitialRol='' RolName=''><strong><span class='ui-icon ui-icon-play'></span></strong></button>
+								<button title='Editar' id='btnMyUsers_Edit' class='ui-button-default ui-button ui-widget ui-corner-all' idUser = ''  State='' IdCompany='' UserName='' DisplayName='' Mail='' Owner='' IdInitialRol=''><strong><span class='ui-icon ui-icon-person'></span></strong></button>
+								
+								<button title='Editar Permisos' id='btnMyUsers_EditPermissions' class='ui-button-default ui-button ui-widget ui-corner-all' idUser='' UserName=''><strong><span class='ui-icon ui-icon-unlocked'></span></strong></button>
+								
+								<button title='Cambiar Clave' id='btnMyUsers_KeyChange' class='ui-button-default ui-button ui-widget ui-corner-all' idUser='' UserName=''><strong><span class='ui-icon ui-icon-key'></span></strong></button>
+							</section>
+						</section>
+				
+					<div id='MyUsers_Edit' title='Editar' IdUsuario='0'>
+							<section id='MyUsersEdit_Message' class="ui-state-highlight ui-corner-all">
+								<p>
+									<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+									<strong>Hey!</strong> 
+									<texto>.</texto>
+								</p>
+							</section>
+						</center>		
+						<form id="MyUsers_Edit_Key">
+							<section id='MyUsersEdit_Message_Key' class="ui-state-highlight ui-corner-all">
+								<p>
+									<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+									<strong>Hey!</strong> 
+									<texto>.</texto>
+								</p>
+							</section>
+							<label class='labelForm' for='txtMyUsersEdit_Password'>Clave: </label><input class='password inputForm' type='password' id='txtMyUsersEdit_Password' />
+							<label class='labelForm' for='txtMyUsersEdit_ReTypePassword'>Nuevamente la Clave: </label><input class='inputForm' type='password' id='txtMyUsersEdit_ReTypePassword'/>
+						</form>
+
+						<label class='labelForm' for='txtMyUsersEdit_State'>Estado: </label>
+						<select class='inputForm' id='txtMyUsersEdit_State'>
+							<option value='Activo'>Activo</option>
+							<option value='Inactivo'>Inactivo</option>		
+						</select>																						
+
+						<label class='labelForm' for='txtMyUsersEdit_Name'>Nombre: </label><input class='inputForm' type='text' id='txtMyUsersEdit_Name' />
+						<label class='labelForm' for='txtMyUsersEdit_DisplayName'>NickName: </label><input class='inputForm' type='text' id='txtMyUsersEdit_DisplayName' />
+						<label class='labelForm' for='txtMyUsersEdit_Email'>Correo: </label><input class='inputForm' type='email' id='txtMyUsersEdit_Email'/>
+						<label class='labelForm' for='txtMyUsersEdit_Company'>Departamento: </label>
+						<select class='inputForm' id='txtMyUsersEdit_Company'></select>
+						<section id='CompanyData_Edit'>
+							<center>
+								<label class='labelForm' id='lblCompanyURL' for='txtCreatingUsersEdit_CompanyOther'>Nombre Nuevo Departamento: </label><input class='inputForm' type='text' id='txtCreatingUsersEdit_CompanyOther'/>
+								</br>
+								<button class='ui-button-primary ui-button ui-widget ui-corner-all' id='btnCompanyDataCreate_Edit'>Crear</button>
+								<button class='ui-button-error ui-button ui-widget ui-corner-all' id = 'btnCompanyDataCancel_Edit'>Cancelar</button>
+							</center>
+						</section>
+
+						<label class='labelForm' for='txtMyUsersEdit_Phone'>Telefono: </label><input class='inputForm' type='text' id='txtMyUsersEdit_Phone'/>
+						<center>
+					</div>
+				</section>
+				<section id='MyUsersEdit_Permissions'>
+					<label for='MyUsersEdit_Permissions_Rol'>Rol</label>
+					<select id='MyUsersEdit_Permissions_Rol'></select>
+					<table id='UserTableFunctions'>
+					  <thead>
+						<tr>
+							<th>Estado</th>
+							<th>Nombre</th>
+							<th>Función</th>
+						</tr>
+					  </thead>
+					  <tbody></tbody>
+					</table>
+				</section>
+		</section>
+		<section id="Dashboard" class="Seccion" texto="Inicio">
+			
+		</section>
+		<section id="Vehiculos" class="Seccion" texto="Vehículos">
+			<center>	
+				<br></br>
+			<section id="radioset_Vehiculo_Empresas"></section>		
+			<br />
+			
+				<div id="radioset_Vehiculo_Zona"></div>
+			</center>
+			<div id="Vehiculo_DatosVehiculo">
+				<table border="0">
+					<tr>
+						<td>N° Interno</td>
+						<td>Placa</td>
+					</tr>
+					<tr>
+						<td>
+							<input class='inputForm' id='txtVehiculo_NInterno' Parametro="Bus_Codigo"/>
+						</td>
+						<td>
+							<input class='inputForm' id='txtVehiculo_Placa' Parametro="Bus_Placa" />
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div id="cntVehiculo_Datos">
+				<form id="Vehiculo_Datos">
+					<!--
+					<label id="lbl_txtVehiculo_Ruta" class='labelForm' for='txtVehiculo_Ruta'>Kilometraje: </label><input class='inputForm' type='text' id='txtVehiculo_Ruta'/>
+				-->
+
+					<label class='labelForm' for='txtVehiculo_Fecha'>Fecha: </label><input class='inputForm' type='text' id='txtVehiculo_Fecha' required/>
+
+					<label class='labelForm' for='txtVehiculo_Hora'>Hora: </label><input class='inputForm' type='text' id='txtVehiculo_Hora' required/>
+
+					<label class='labelForm' for='txtVehiculo_Direccion'>Dirección: </label><input class='inputForm' type='text' id='txtVehiculo_Direccion' required/>
+
+					<center>
+						<div id="radioset_Vehiculo_TipoInspeccion">
+							<input type="radio" id="rdbV_TipoInspeccion1" name="rdbV_TipoInspeccion" value="1" checked="checked"/><label for="rdbV_TipoInspeccion1">Inspección</label>
+							<input type="radio" id="rdbV_TipoInspeccion2" name="rdbV_TipoInspeccion" value="2" /><label for="rdbV_TipoInspeccion2">Hallazgo</label>
+							<input type="radio" id="rdbV_TipoInspeccion3" name="rdbV_TipoInspeccion" value="3" /><label for="rdbV_TipoInspeccion3">Inmovilizar</label>
+							<input type="radio" id="rdbV_TipoInspeccion4" name="rdbV_TipoInspeccion" value="4" /><label for="rdbV_TipoInspeccion4">Habilitar</label>
+						</div>
+					</center>
+					<div id ="Vehiculo_TipoInspeccion">
+						<div id="rdbV_TipoInspeccion_Hallazgo">
+							<label class='labelForm' for='txtVehiculo_CodigoMulta'>Infracción: </label><input class='inputForm' type='text' id='txtVehiculo_CodigoMulta' required/>
+
+							<label class='labelForm' for='txtVehiculo_DescripcionMulta'>Descripción:</label><textarea class='inputForm' id='txtVehiculo_DescripcionMulta' readonly></textarea>
+
+							<iframe src="Tools/subir"></iframe>
+						</div>
+						<div id="rdbV_TipoInspeccion_Inmovilizar">
+							<label class='labelForm' for='txtVehiculo_CodigoInmovilizacion'>Causa: </label><input class='inputForm' type='text' id='txtVehiculo_CodigoInmovilizacion' required/>
+
+							<label class='labelForm' for='txtVehiculo_CriterioInmovilizacion'>Causa:</label><textarea class='inputForm' id='txtVehiculo_CriterioInmovilizacion' readonly></textarea>
+
+							<label class='labelForm' for='txtVehiculo_CausaInmovilizacion'>Criterio:</label><textarea class='inputForm' id='txtVehiculo_CausaInmovilizacion' readonly></textarea>
+						</div>
+					</div>
+					
+
+					<label class='labelForm' for='txtVehiculo_Observaciones'>Observaciones:</label><textarea class='inputForm' id='txtVehiculo_Observaciones' ></textarea>
+					<br></br>
+					<center>
+						<button id="obj" class="btn ui-button-primary" style="width:15em;">Guardar</button>
+					</center>
+
+				</form>
+				<center>
+					<button id="btnVehiculo_Nuevo" class="btn ui-button-success" style="width:15em;">Nuevo</button>
+				</center>	
+
+			</div>
+		
+		</section>
+		<section id="Seguridad" class="Seccion" texto="Seguridad">
+			<center>	
+				<br></br>
+			<section id="radioset_Seguridad_Empresas"></section>		
+			<br />
+				<div id="radioset_Seguridad_Zona"></div>
+			</center>
+			<div id="Seguridad_DatosVehiculo">
+				<table border="0">
+					<tr>
+						<td>Fecha</td>
+						<td><input class='inputForm' id='txtSeguridad_Fecha' /></td>
+						<td>Hora</td>
+						<td><input class='inputForm' id='txtSeguridad_Hora'  />	</td>
+					</tr>
+					<tr>
+						<td >Dirección</td>
+						<td colspan="4"><input  class='inputForm' id='txtSeguridad_Direccion' /></td>
+					</tr>
+					<tr>
+						<td>S/N</td>
+						<td><input class='inputForm' id='txtSeguridad_Serial' /></td>
+					</tr>
+				</table>
+					<center>
+						<div id="radioset_Seguridad_TipoInspeccion">
+							<input type="radio" id="rdbS_TipoInspeccion1" name="rdbS_TipoInspeccion" value="1" checked="checked"/><label for="rdbS_TipoInspeccion1">Inspección</label>
+							<input type="radio" id="rdbS_TipoInspeccion2" name="rdbS_TipoInspeccion" value="2" /><label for="rdbS_TipoInspeccion2">Hallazgo</label>
+							<input type="radio" id="rdbS_TipoInspeccion3" name="rdbS_TipoInspeccion" value="3" /><label for="rdbS_TipoInspeccion3">Velocidad</label>
+							<input type="radio" id="rdbS_TipoInspeccion4" name="rdbS_TipoInspeccion" value="4" /><label for="rdbS_TipoInspeccion4">Alcoholimetría</label>
+						</div>
+					</center>
+				<form id="Seguridad_Datos_Velocidad">
+					<table border="0">
+						<tr>
+							<td>Numero Interno</td>
+							<td>Placa</td>
+							<td>Ruta</td>
+						</tr>
+						<tr>
+							<td><input id='txtSeguridad_NInterno' Parametro="Bus_Codigo" required /></td>
+							<td><input id='txtSeguridad_Placa' Parametro="Bus_Placa" required />	</td>
+							<td><input id='txtSeguridad_Velocidad_Ruta' required />	</td>
+						</tr>
+						
+						<tr>
+							<td>Limite de Velocidad</td>
+							<td>Velocidad Medida</td>
+							<td>Distancia</td>
+						</tr>
+						<tr>
+							<td><input id='txtSeguridad_VelocidadLimite' required /></td>
+							<td><input id='txtSeguridad_VelocidadMedida' required /></td>
+							<td><input id='txtSeguridad_Distancia' required />	</td>
+						</tr>
+					</table>
+					<br></br>
+					<center>
+						<button id="obj" class="btn ui-button-primary" style="width:15em;">Guardar y nuevo</button>
+					</center>
+
+				</form>
+
+				<form id="Seguridad_Datos_Alcoholimetria">
+					<table border="0">
+						<tr>
+							<td>Operador</td>
+							<td>Movil</td>
+							<td>Ruta</td>
+						</tr>
+						<tr>
+							<td><input id='txtSeguridad_Operador' required /></td>
+							<td><input id='txtSeguridad_Placa' Parametro="Bus_Codigo" required />	</td>
+							<td><input id='txtSeguridad_Velocidad_Ruta' required />	</td>
+						</tr>
+						<tr>
+							
+							<td>Numero De Prueba</td>
+							
+							<td><input id='txtSeguridad_NumPrueba' required /></td>
+						</tr>
+					</table>
+					<br></br>
+					<center>
+						<div id="radioset_Seguridad_Alcoholimetria_Test">
+							<input type="radio" id="rdbSeguridad_Test1" name="rdbSeguridad_Test" attrValor="1" value="1" /><label for="rdbSeguridad_Test1" >Positivo</label>
+							<input type="radio" id="rdbSeguridad_Test2" name="rdbSeguridad_Test" attrValor="0" value="2" /><label for="rdbSeguridad_Test2" >Negativo</label>
+						</div>
+						<div id="cntTestAutomatica">
+							<label class='labelForm' for='txtSeguridad_TestAutomatica'>Test Automatica: </label><input class='inputForm' type='number' id='txtSeguridad_TestAutomatica' required/>
+						</div>
+						<br></br>
+
+
+						<button id="obj" class="btn ui-button-primary" style="width:15em;">Guardar y nuevo</button>
+					</center>
+
+				</form>
+				<form id ="Seguridad_TipoInspeccion">
+						<div id="rdbS_TipoInspeccion_Hallazgo">
+							<label class='labelForm' for='txtSeguridad_CodigoMulta'>Infracción: </label><input class='inputForm' type='text' id='txtSeguridad_CodigoMulta' required/>
+
+							
+							<label class='labelForm' for='txtSeguridad_DescripcionMulta'>Descripción:</label><textarea class='inputForm' id='txtSeguridad_DescripcionMulta' readonly></textarea>
+
+							<iframe src="Tools/subir"></iframe>
+						</div>
+				</form>
+
+				<center>
+					<button id="btnSeguridad_Nuevo" class="btn ui-button-success" style="width:15em;">Limpiar</button>
+				</center>
+		</section>
+		<section id="Hallazgos" class="Seccion" texto="Hallazgos">
+			<center>
+				<section id="Hallazgos_Subdirecciones">
+					<label for='rdbHallazgo_Subdireccion1'>Vehículos</label>
+					<input type='radio' id='rdbHallazgo_Subdireccion1' name="rdbHallazgo_Subdireccion" value="1" />
+
+					<label for='rdbHallazgo_Subdireccion2'>Seguridad</label>
+					<input type='radio' id='rdbHallazgo_Subdireccion2' name="rdbHallazgo_Subdireccion" value="2" />
+
+					<label for='rdbHallazgo_Subdireccion3'>Operaciones</label>
+					<input type='radio' id='rdbHallazgo_Subdireccion3' name="rdbHallazgo_Subdireccion" value="3" />
+				</section>
+				<br/>
+				<div id="radioset_Hallazgos_Empresas"></div>		
+			
+				<br/>
+					
+				<div id="radioset_Hallazgos_Zona"></div>
+
+
+			</center>
+		</section>
+		
+</body>
+</html>

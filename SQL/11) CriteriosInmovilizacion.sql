@@ -1,0 +1,26 @@
+INSERT INTO CriteriosInmovilizacion (
+	IdCriterioInmo,
+	Criterio,
+	Causa)
+VALUES
+('1', 'Si en el piso se presenta un hueco a laminas sueltas ', 'Posible accidente de pasajeros'), 
+('2', 'Si las puertas de ingreso y de salida de pasajeros no funcionan correctamente ', 'Posible accidente de pasajeros'), 
+('3', 'Si la puerta del conductor no funciona adecuadamente ', 'Posible accidente de conductor'), 
+('4', 'Exceso de humo en el exhosto ', 'Contaminación al ambiente'), 
+('5', 'Existencia de fugas de aire: tanque de aire, compresor ', 'Problemas en el sistema de frenos pérdida de fuerza de frenado'), 
+('6', 'Si se presentan fugas hidráulicas: carter del motor, sistema de frenos si aplica', 'Pérdida de lubricación en el motor, fundición del motor posible accidente'), 
+('7', 'Llantas sin ranuras golpes a rajaduras en su estructura lateral y/o lizas (min 2mm)', 'Estallido de llanta pérdida de control bus posible accidente'), 
+('8', 'Existencia de fugas de agua en el motor ', 'Fundición del motor posible accidente'), 
+('9', 'Existencia de fugas de combustible ( motor a tanque de almacenamiento)', 'Contaminación al ambiente, incendio '), 
+('10', 'Falta del equipo de seguridad (extintores)', 'De obligatorio cumplimiento'), 
+('11', 'Falla general del sistema eléctrico', 'No se puede prestar servicio sin luces internas o externas'), 
+('12', 'Inclinación del bus', 'Posible accidente pérdida de control del bus'), 
+('13', 'Existencia de ruido excesivo del bus', 'Problema de exosto contaminación auditiva '), 
+('14', 'Problemas en la direccion', 'Perdida de control del bus posible accidente '), 
+('15', 'Inexistencia de placa de indentificacion', 'Incumplimiento normas de transito'), 
+('16', 'Falla de funcionamiento de sistema sirci', 'Incumplimiento contrato'), 
+('17', 'Claraboya rota ', 'Entrada de agua interior bus '), 
+('18', 'Pedales de operador rotos ', 'Posible accidente del bus '), 
+('19', 'Fallos o faltas en los dispositivos de emergencia (ventanas, claraboyas, martillos, ganchos, etc)', 'Inoperatividad en caso de emergencia'), 
+('20', 'Sillas y/o pasamanos sueltos o rotos', 'Posible accidente de pasajeros'), 
+('21', 'Falla en el freno de ahogo del vehiculo', 'Posible accidente del bus ');
